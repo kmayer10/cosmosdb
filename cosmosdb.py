@@ -15,6 +15,14 @@ DATABASE = "thinknyx"
 COLLECTION = "thinknyx"
 FIELD = "Day"
 
+def insert_sample_document(collection):
+    """Insert a sample document and return the contents of its _id field"""
+    document_id = collection.insert_one(
+        {FIELD: randint(50, 500)}
+    ).inserted_id
+    print("Inserted document with _id {}".format(document_id))
+    return document_id
+
 def create_database_unsharded_collection(client):
     """Create sample database with shared throughput if it doesn't exist and
     an unsharded collection
@@ -55,7 +63,7 @@ def main():
         )
 
     collection = create_database_unsharded_collection(client)
-
+    document_id = insert_sample_document(collection)
 
 if __name__ == "__main__":
     main()
