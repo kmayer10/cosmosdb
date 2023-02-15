@@ -3,12 +3,14 @@ import getpass
 import pymongo
 from random import randint
 
+# Connection string to connect with CosmosDB MongoDB API
 CONNECTION_STRING = getpass.getpass(
     prompt="Enter connection string available in networking tab of cosmos account: "
 )
 
 #print("Using " + CONNECTION_STRING + "to connect with MongoDB")
 
+# Variables for Database & collection to create, update or delete the documents
 DATABASE = "thinknyx"
 COLLECTION = "thinknyx"
 FIELD = "Day"
