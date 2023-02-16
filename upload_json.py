@@ -17,7 +17,7 @@ COLLECTION = "trainings"
 #FIELD = "Day"
 
 # Opening JSON file
-file = open('cosmos.json')
+file = open('Azure_Boards.json')
 data = json.load(file)
 
 def insert_sample_document(collection):
