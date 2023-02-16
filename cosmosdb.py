@@ -83,6 +83,7 @@ def main():
 
     collection = create_database_unsharded_collection(client)
     document_id = insert_sample_document(collection)
+    read_document(collection, document_id)
 
 if __name__ == "__main__":
     main()

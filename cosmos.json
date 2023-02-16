@@ -1,0 +1,24 @@
+{
+    "Vendor": "Thinknyx",
+    "client": {
+        "Name": "BFL",
+        "Location": "Pune",
+        "Delivery Mode": "Classroom"
+    },
+    "Training Details": {
+        "Name": "CosmosDB",
+        "Duration": "6",
+        "Start Date": "13-02-2023",
+        "End Date": "18-02-2023"
+    },
+    "Trainer Details": {
+        "Name": "Kul",
+        "Base Location": "Delhi-NCR"
+    },
+    "Travel Details": {
+        "Flight": "Booked",
+        "Hotel": "Booked",
+        "Return Flight": "Booked",
+        "Cab Needed": "No"
+    }
+}
