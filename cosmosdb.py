@@ -23,6 +23,25 @@ def insert_sample_document(collection):
     print("Inserted document with _id {}".format(document_id))
     return document_id
 
+def read_document(collection, document_id):
+    """Return the contents of the document containing document_id"""
+    print(
+        "Found a document with _id {}: {}".format(
+            document_id, collection.find_one({"_id": document_id})
+        )
+    )
+
+def update_document(collection, document_id):
+    """Update the sample field value in the document containing document_id"""
+    collection.update_one(
+        {"_id": document_id}, {"$set": {SAMPLE_FIELD_NAME: "Updated!"}}
+    )
+    print(
+        "Updated document with _id {}: {}".format(
+            document_id, collection.find_one({"_id": document_id})
+        )
+    )
+
 def create_database_unsharded_collection(client):
     """Create sample database with shared throughput if it doesn't exist and
     an unsharded collection
