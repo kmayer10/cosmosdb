@@ -50,6 +50,6 @@ resource "azurerm_cosmosdb_account" "GlobalDocumentDB" {
 resource "azurerm_cosmosdb_sql_database" "thinknyx" {
   name                = var.name
   resource_group_name = azurerm_resource_group.thinknyx.name
-  account_name        = azurerm_cosmosdb_account.example.name
+  account_name        = azurerm_cosmosdb_account.GlobalDocumentDB.name
   throughput          = var.throughput
 }
