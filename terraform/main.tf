@@ -19,7 +19,7 @@ resource "azurerm_resource_group" "thinknyx" {
 }
 resource "azurerm_cosmosdb_account" "GlobalDocumentDB" {
   name                      = var.name
-  location                  = var.cosmosdb_account_location
+  location                  = var.location
   resource_group_name       = azurerm_resource_group.thinknyx.name
   offer_type                = "Standard"
   kind                      = "GlobalDocumentDB"
