@@ -53,3 +53,13 @@ resource "azurerm_cosmosdb_sql_database" "thinknyx" {
   account_name        = azurerm_cosmosdb_account.GlobalDocumentDB.name
   throughput          = var.throughput
 }
+
+resource "azurerm_cosmosdb_sql_container" "thinknyx" {
+  name                  = var.name
+  resource_group_name   = azurerm_resource_group.thinknyx.name
+  account_name          = azurerm_cosmosdb_account.GlobalDocumentDB.name
+  database_name         = azurerm_cosmosdb_sql_database.thinknyx.name
+  partition_key_path    = "/definition/id"
+  partition_key_version = 1
+  throughput            = var.throughput
+}
